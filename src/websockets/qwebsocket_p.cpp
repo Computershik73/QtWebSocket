@@ -1105,6 +1105,7 @@ void QWebSocketPrivate::processStateChanged(QAbstractSocket::SocketState socketS
                                                QStringLiteral(""),
                                                QStringLiteral(""),
                                                m_key);
+                emit q->debugMessageAvailable("QWebSocket Handshake: " + handshake);
                 m_pSocket->write(handshake.toLatin1());
             }
             break;

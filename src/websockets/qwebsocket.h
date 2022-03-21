@@ -155,6 +155,7 @@ Q_SIGNALS:
     void error(QAbstractSocket::SocketError error);
     void pong(quint64 elapsedTime, QByteArray payload);
     void bytesWritten(qint64 bytes);
+    void debugMessageAvailable(QString message);
 
 #ifndef QT_NO_SSL
     void sslErrors(const QList<QSslError> &errors);
