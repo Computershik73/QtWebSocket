@@ -592,8 +592,6 @@ void QWebSocketPrivate::makeConnections(const QTcpSocket *pTcpSocket)
 
         connect(pTcpSocket, &QAbstractSocket::aboutToClose, q, &QWebSocket::aboutToClose);
 
-        connect(pTcpSocket, &QAbstractSocket::hostFound, q, &QWebSocket::hostFound);
-
         //catch signals
         connect(pTcpSocket, &QAbstractSocket::stateChanged, this,
                 &QWebSocketPrivate::processStateChanged);
@@ -609,8 +607,6 @@ void QWebSocketPrivate::makeConnections(const QTcpSocket *pTcpSocket)
         connect(pTcpSocket,SIGNAL(readChannelFinished()), q, SIGNAL(readChannelFinished()));
 
         connect(pTcpSocket, SIGNAL(aboutToClose()), q, SIGNAL(aboutToClose()));
-
-        connect(pTcpSocket, &QAbstractSocket::hostFound, q, &QWebSocket::hostFound);
 
         //catch signals
         connect(pTcpSocket, SIGNAL(stateChanged(QAbstractSocket::SocketState)), this, SLOT(processStateChanged(QAbstractSocket::SocketState)));

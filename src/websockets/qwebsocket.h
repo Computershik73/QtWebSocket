@@ -140,7 +140,6 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void aboutToClose();
-    void hostFound();
     void connected();
     void disconnected();
     void stateChanged(QAbstractSocket::SocketState state);
